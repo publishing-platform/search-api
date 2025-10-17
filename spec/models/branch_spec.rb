@@ -1,0 +1,17 @@
+require "rails_helper"
+
+RSpec.describe Branch do
+  subject(:branch) { described_class.new("my-branch") }
+
+  describe ".default" do
+    it "returns the default branch" do
+      expect(described_class.default).to eq(described_class.new("default_branch"))
+    end
+  end
+
+  describe "#name" do
+    it "returns the fully qualified name of the branch" do
+      expect(branch.name).to eq("[collection]/dataStores/publishing_platform_content_store/branches/my-branch")
+    end
+  end
+end
