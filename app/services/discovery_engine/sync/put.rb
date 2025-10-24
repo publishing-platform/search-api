@@ -2,8 +2,8 @@ module DiscoveryEngine::Sync
   class Put < Operation
     MIME_TYPE = "text/html".freeze
 
-    def initialize(content_id, metadata = nil, content: "")
-      super(:put, content_id)
+    def initialize(content_id, metadata = nil, content: "", payload_version: nil)
+      super(:put, content_id, payload_version:)
 
       @metadata = metadata
       @content = content
