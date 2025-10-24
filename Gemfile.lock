@@ -328,6 +328,12 @@ GEM
       erb
       psych (>= 4.0.0)
       tsort
+    redis (5.4.1)
+      redis-client (>= 0.22.0)
+    redis-client (0.26.1)
+      connection_pool
+    redlock (2.0.6)
+      redis-client (>= 0.14.1, < 1.0.0)
     regexp_parser (2.11.3)
     reline (0.6.2)
       io-console (~> 0.5)
@@ -442,6 +448,8 @@ DEPENDENCIES
   publishing_platform_message_queue_consumer
   publishing_platform_rubocop
   rails (~> 8.0.3)
+  redis
+  redlock
   rspec-rails
   simplecov
   timecop

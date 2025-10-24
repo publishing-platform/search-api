@@ -9,6 +9,8 @@ gem "jsonpath"
 gem "loofah"
 gem "publishing_platform_app_config"
 gem "publishing_platform_message_queue_consumer"
+gem "redis"
+gem "redlock"
 gem "tzinfo-data", platforms: %i[windows jruby]
 
 group :development, :test do
