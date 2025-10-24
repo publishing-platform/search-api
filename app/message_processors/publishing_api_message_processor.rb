@@ -3,7 +3,7 @@ class PublishingApiMessageProcessor
   def process(message)
     document_hash = message.payload.deep_symbolize_keys
     document = PublishingApiDocument.new(document_hash)
-    document.synchronize    
+    document.synchronize
 
     message.ack
   rescue StandardError => e

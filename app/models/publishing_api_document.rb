@@ -21,10 +21,10 @@ class PublishingApiDocument
   def synchronize
     if sync?
       log("sync")
-      put_service.new(content_id, metadata, content:, payload_version:).call
+      put_service.new(content_id, metadata, content:).call
     elsif desync?
       log("desync (#{action_reason}))")
-      delete_service.new(content_id, payload_version:).call
+      delete_service.new(content_id).call
     else
       raise "Cannot determine action for document: #{content_id}"
     end

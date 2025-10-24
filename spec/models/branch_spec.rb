@@ -11,7 +11,7 @@ RSpec.describe Branch do
 
   describe "#name" do
     it "returns the fully qualified name of the branch" do
-      expect(branch.name).to eq("[collection]/dataStores/publishing_platform_content_store/branches/my-branch")
+      expect(branch.name).to eq("[collection]/dataStores/publishing_platform_content/branches/my-branch")
     end
   end
 end

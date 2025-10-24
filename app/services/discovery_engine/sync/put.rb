@@ -2,8 +2,8 @@ module DiscoveryEngine::Sync
   class Put < Operation
     MIME_TYPE = "text/html".freeze
 
-    def initialize(content_id, metadata = nil, content: "", payload_version: nil)
-      super(:put, content_id, payload_version:)
+    def initialize(content_id, metadata = nil, content: "")
+      super(:put, content_id)
 
       @metadata = metadata
       @content = content
@@ -14,7 +14,7 @@ module DiscoveryEngine::Sync
         document: {
           id: content_id,
           name: document_name,
-          json_data: metadata.merge(payload_version:).to_json,
+          json_data: metadata.to_json,
           content: {
             mime_type: MIME_TYPE,
             # The Google client expects an IO object to extract raw byte content from

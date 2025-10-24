@@ -46,8 +46,8 @@ RSpec.describe PublishingApiMessageProcessor do
 
         # in ruby version 3.4.0 the Hash#inspect method has been changed so that symbol keys are displayed
         # using the modern symbol key syntax. See https://www.ruby-lang.org/en/news/2024/12/25/ruby-3-4-0-released/
-        # Compatibility issues section.  When we upgrade Ruby version to 3.4.0 this test will fail. 
-        # To fix, replace this code with commented out code below.        
+        # Compatibility issues section.  When we upgrade Ruby version to 3.4.0 this test will fail.
+        # To fix, replace this code with commented out code below.
         expect(logger).to have_received(:error).with(<<~MSG)
           Failed to process incoming document message:
           RuntimeError: Could not synchronize

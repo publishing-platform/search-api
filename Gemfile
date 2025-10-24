@@ -20,5 +20,6 @@ group :development, :test do
 end
 
 group :test do
+  gem "climate_control"
   gem "simplecov"
 end

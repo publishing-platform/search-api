@@ -5,7 +5,7 @@ RSpec.describe DataStore do
 
   describe ".default" do
     it "returns the default data store" do
-      expect(described_class.default).to eq(described_class.new("publishing_platform_content_store"))
+      expect(described_class.default).to eq(described_class.new("publishing_platform_content"))
     end
   end
 

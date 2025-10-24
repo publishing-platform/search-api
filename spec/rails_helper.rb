@@ -22,6 +22,8 @@ require "rspec/rails"
 #
 Rails.root.glob("spec/support/**/*.rb").sort_by(&:to_s).each { |f| require f }
 
+Rails.application.load_tasks
+
 RSpec.configure do |config|
   # Remove this line to enable support for ActiveRecord
   config.use_active_record = false

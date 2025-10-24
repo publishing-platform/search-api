@@ -9,6 +9,6 @@ DataStore = Data.define(:remote_resource_id) do
   include DiscoveryEngineNameable
 
   def self.default
-    new("publishing_platform_content_store")
+    new("publishing_platform_content")
   end
 end
