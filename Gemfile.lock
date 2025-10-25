@@ -439,6 +439,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   climate_control
+  connection_pool
   debug
   google-cloud-discovery_engine (<= 2.2.0)
   google-cloud-discovery_engine-v1beta (<= 0.20.1)
