@@ -10,19 +10,21 @@ module DiscoveryEngine::Sync
     end
 
     def call
-      DiscoveryEngine::Clients.document_service.update_document(
-        document: {
-          id: content_id,
-          name: document_name,
-          json_data: metadata.to_json,
-          content: {
-            mime_type: MIME_TYPE,
-            # The Google client expects an IO object to extract raw byte content from
-            raw_bytes: StringIO.new(content),
+      sync do
+        DiscoveryEngine::Clients.document_service.update_document(
+          document: {
+            id: content_id,
+            name: document_name,
+            json_data: metadata.to_json,
+            content: {
+              mime_type: MIME_TYPE,
+              # The Google client expects an IO object to extract raw byte content from
+              raw_bytes: StringIO.new(content),
+            },
           },
-        },
-        allow_missing: true,
-      )
+          allow_missing: true,
+        )
+      end
     end
 
   private
