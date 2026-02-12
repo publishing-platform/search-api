@@ -4,7 +4,7 @@ module PublishingApi
       @content = case raw_content
                  in String
                    raw_content
-                 in [*, { content_type: "text/html", content: html_content }, *]
+                 in [*, { content_type: "text/html", content: html_content }, *] # pattern matching - see https://docs.ruby-lang.org/en/3.0/syntax/pattern_matching_rdoc.html
                    html_content
                  in Array
                    raw_content.join(" ") if raw_content.all? { _1.is_a?(String) }

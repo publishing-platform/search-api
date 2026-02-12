@@ -1,0 +1,72 @@
+{
+  "title": "A test news story",
+  "description": "A test news story description",
+  "base_path": "/news/a-test-news-story",
+  "public_updated_at": "2026-01-30T20:41:10Z",
+  "update_type": "republish",
+  "phase": "live",
+  "publishing_app": "content-publisher",
+  "rendering_app": "frontend",
+  "document_type": "news_story",
+  "schema_name": "news_article",
+  "first_published_at": "2026-01-30T20:41:10Z",
+  "details": {
+    "body": [
+      {
+        "content": "# A test news story",
+        "content_type": "text/markdown"
+      },
+      {
+        "content_type": "text/html",
+        "content": "<h1 id=\"a-test-news-story\">A test news story</h1>\n"
+      }
+    ],
+    "image": {
+      "url": "https://assets.publishing-platform.co.uk/testing.jpg",
+      "credit": "Crown Copyright",
+      "caption": "Mountain goat standing in snow",
+      "alt_text": "Mountain goat standing in snow"
+    },
+    "attachments": [],
+    "change_history": [
+      {
+        "note": "First published.",
+        "public_timestamp": "2026-01-30T20:41:10.179+00:00"
+      }
+    ]
+  },
+  "routes": [
+    {
+      "path": "/news/a-test-news-story",
+      "type": "exact"
+    }
+  ],
+  "redirects": [],
+  "content_id": "1cf744dd-2ba1-4ed6-acbe-7b73d232165f",
+  "expanded_links": {
+    "primary_publishing_organisation": [
+      {
+        "content_id": "af07d5a5-df63-4ddc-9383-6a666845ebe9",
+        "title": "Digital Services",
+        "api_path": "/api/content/organisations/digital-services",
+        "base_path": "/organisations/digital-services",
+        "document_type": "organisation",
+        "schema_name": "organisation",
+        "withdrawn": false,
+        "details": {
+          "abbreviation": "DS",
+          "status": "live"
+        },
+        "links": {}
+      }
+    ]
+  },
+  "publishing_request_id": "e6c1f950064f55cddb0c4a112da6a437",
+  "publishing_platform_request_id": "21-1696413947.234-10.13.22.59-2067",
+  "links": {
+    "primary_publishing_organisation": [
+      "af07d5a5-df63-4ddc-9383-6a666845ebe9"
+    ]
+  },
+  "payload_version": 51
+}
