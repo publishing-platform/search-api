@@ -10,6 +10,8 @@ module PublishingApi
         description: document_hash[:description],
         link:,
         url:,
+        public_timestamp:,
+        public_timestamp_datetime: document_hash[:public_updated_at],
         document_type: document_hash[:document_type],
         debug:,
       }.compact_blank
@@ -29,6 +31,14 @@ module PublishingApi
       return link unless link_relative?
 
       WEBSITE_ROOT + link
+    end
+
+    def public_timestamp
+      return nil unless document_hash[:public_updated_at]
+
+      # rubocop:disable Rails/TimeZone (string already contains timezone info which would be lost)
+      Time.parse(document_hash[:public_updated_at]).to_i
+      # rubocop:enable Rails/TimeZone
     end
 
     # Useful information about the document that is not intended to be exposed to the end user.
