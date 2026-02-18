@@ -2,8 +2,8 @@ class SearchesController < ApplicationController
   before_action :validate_query_params, only: :show
 
   def show
-    search = DiscoveryEngine::Clients.search_service.search({ query: query_params[:q], serving_config: ServingConfig.default.name, filter: "document_type: ANY(\"organisation\")" })
-    render json: search.response
+    # search = DiscoveryEngine::Clients.search_service.search({ query: query_params[:q], serving_config: ServingConfig.default.name, filter: "document_type: ANY(\"organisation\")" })
+    render json: DiscoveryEngine::Query::Search.new(query_params).result_set
   end
 
 private

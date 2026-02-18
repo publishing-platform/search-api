@@ -11,6 +11,7 @@ RSpec.describe Result, type: :model do
         "link" => "/sample-link",
         "description" => "Sample Description",
         "document_type" => "news_story",
+        "public_timestamp" => 1_698_831_790, # 2023-11-01T09:43:10+00:00
       }
     end
 
@@ -22,6 +23,7 @@ RSpec.describe Result, type: :model do
         link: "/sample-link",
         description: "Sample Description",
         document_type: "news_story",
+        public_timestamp: "2023-11-01T09:43:10+00:00",
       )
     end
 
@@ -33,6 +35,7 @@ RSpec.describe Result, type: :model do
           "link" => "/sample-link",
           "description" => "Sample Description",
           "document_type" => "organisation",
+          "public_timestamp" => 1_698_831_790, # 2023-11-01T09:43:10+00:00
           "organisation_status" => "live",
           "organisation_type" => "department",
           "organisation_abbreviation" => "ds",
@@ -47,6 +50,7 @@ RSpec.describe Result, type: :model do
           link: "/sample-link",
           description: "Sample Description",
           document_type: "organisation",
+          public_timestamp: "2023-11-01T09:43:10+00:00",
           organisation_status: "live",
           organisation_type: "department",
           organisation_abbreviation: "ds",
@@ -59,6 +63,14 @@ RSpec.describe Result, type: :model do
 
       it "handles missing or incomplete data gracefully" do
         expect { result }.not_to raise_error
+      end
+    end
+
+    context "when public_timestamp is nil" do
+      let(:stored_document) { { "public_timestamp" => nil } }
+
+      it "sets public_timestamp to nil" do
+        expect(result.public_timestamp).to be_nil
       end
     end
 

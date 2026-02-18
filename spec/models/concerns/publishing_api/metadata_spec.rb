@@ -82,6 +82,34 @@ RSpec.describe PublishingApi::Metadata do
       it { is_expected.to eq("foo_bar") }
     end
 
+    describe "public_timestamp" do
+      subject(:extracted_public_timestamp) { extracted_metadata[:public_timestamp] }
+
+      let(:document_hash) { { public_updated_at: "2012-02-01T00:00:00Z" } }
+
+      it { is_expected.to eq(1_328_054_400) }
+
+      context "without a public_timestamp" do
+        let(:document_hash) { {} }
+
+        it { is_expected.to be_nil }
+      end
+    end
+
+    describe "public_timestamp_datetime" do
+      subject(:extracted_public_timestamp_datetime) { extracted_metadata[:public_timestamp_datetime] }
+
+      let(:document_hash) { { public_updated_at: "2012-02-01T00:00:00Z" } }
+
+      it { is_expected.to eq("2012-02-01T00:00:00Z") }
+
+      context "without a public_timestamp" do
+        let(:document_hash) { {} }
+
+        it { is_expected.to be_nil }
+      end
+    end
+
     describe "debug" do
       subject(:extracted_debug) { extracted_metadata[:debug] }
 
@@ -89,7 +117,7 @@ RSpec.describe PublishingApi::Metadata do
 
       it "includes the last sync timestamp" do
         Timecop.freeze(Time.zone.local(1989, 12, 13, 11, 22, 33)) do
-          expect(extracted_debug[:last_synced_at]).to eq("1989-12-13T11:22:33Z")
+          expect(extracted_debug[:last_synced_at]).to eq("1989-12-13T11:22:33+00:00")
         end
       end
 
