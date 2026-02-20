@@ -43,5 +43,5 @@ jobs:
           GOOGLE_CLOUD_PROJECT_ID_NUMBER: not-used
           DISCOVERY_ENGINE_DEFAULT_COLLECTION_NAME: not-used
           DISCOVERY_ENGINE_DEFAULT_LOCATION_NAME: not-used      
-          REDIS_URL: redis://localhost:6379    
+          REDIS_URL: redis://localhost:6379 # not used in tests, but required to boot the application
         run: bundle exec rake spec
