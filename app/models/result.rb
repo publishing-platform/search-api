@@ -5,7 +5,7 @@ class Result
   include ActiveModel::Model
 
   attr_accessor :id, :content_id, :title, :description, :link, :public_timestamp, :document_type,
-                :organisation_status, :organisation_type, :organisation_abbreviation
+                :organisation_status, :organisation_type, :organisation_abbreviation, :slug
 
   # Creates a new instance based on a document stored in Discovery Engine, transforming fields as
   # appropriate
@@ -20,7 +20,7 @@ class Result
         # Fields Discovery Engine documents contains verbatim
         .slice(
           :content_id, :title, :link, :document_type, :organisation_status, :organisation_type,
-          :organisation_abbreviation
+          :organisation_abbreviation, :slug
         )
         # Fields that need to be transformed
         .merge(
@@ -28,7 +28,7 @@ class Result
           description: description,
           # Stored as a timestamp in Discovery Engine, but we want to return an ISO8601 string
           public_timestamp:,
-        ),
+        ).compact,
     )
   end
 end

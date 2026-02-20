@@ -110,6 +110,43 @@ RSpec.describe PublishingApi::Metadata do
       end
     end
 
+    context "when the document is an organisation" do
+      let(:document_hash) do
+        {
+          base_path: "/organisations/digital-services",
+          document_type: "organisation",
+          details: {
+            status: "live",
+            organisation_type: "department",
+            abbreviation: "DS",
+          },
+        }
+      end
+      describe "organisation_status" do
+        subject(:extracted_organisation_status) { extracted_metadata[:organisation_status] }
+
+        it { is_expected.to eq("live") }
+      end
+
+      describe "organisation_type" do
+        subject(:extracted_organisation_type) { extracted_metadata[:organisation_type] }
+
+        it { is_expected.to eq("department") }
+      end
+
+      describe "organisation_abbreviation" do
+        subject(:extracted_organisation_abbreviation) { extracted_metadata[:organisation_abbreviation] }
+
+        it { is_expected.to eq("DS") }
+      end
+
+      describe "slug" do
+        subject(:extracted_slug) { extracted_metadata[:slug] }
+
+        it { is_expected.to eq("digital-services") }
+      end
+    end
+
     describe "debug" do
       subject(:extracted_debug) { extracted_metadata[:debug] }
 

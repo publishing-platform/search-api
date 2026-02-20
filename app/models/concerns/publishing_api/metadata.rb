@@ -13,6 +13,10 @@ module PublishingApi
         public_timestamp:,
         public_timestamp_datetime: document_hash[:public_updated_at],
         document_type: document_hash[:document_type],
+        organisation_status:,
+        organisation_type:,
+        organisation_abbreviation:,
+        slug:,
         debug:,
       }.compact_blank
     end
@@ -39,6 +43,34 @@ module PublishingApi
       # rubocop:disable Rails/TimeZone (string already contains timezone info which would be lost)
       Time.parse(document_hash[:public_updated_at]).to_i
       # rubocop:enable Rails/TimeZone
+    end
+
+    def organisation_status
+      return nil unless document_hash[:document_type] == "organisation"
+
+      document_hash
+        .dig(:details, :status)
+    end
+
+    def organisation_type
+      return nil unless document_hash[:document_type] == "organisation"
+
+      document_hash
+        .dig(:details, :organisation_type)
+    end
+
+    def organisation_abbreviation
+      return nil unless document_hash[:document_type] == "organisation"
+
+      document_hash
+        .dig(:details, :abbreviation)
+    end
+
+    def slug
+      case document_hash[:document_type]
+      when "organisation"
+        link&.gsub(%r{^/organisations/}, "")
+      end
     end
 
     # Useful information about the document that is not intended to be exposed to the end user.

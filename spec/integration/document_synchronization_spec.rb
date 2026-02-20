@@ -58,6 +58,10 @@ RSpec.describe "Document synchronization" do
           public_timestamp_datetime: "2026-01-30T20:16:41Z",
           url: "https://www.publishing-platform.co.uk/organisations/digital-services",
           document_type: "organisation",
+          organisation_status: "live",
+          organisation_type: "department",
+          organisation_abbreviation: "DS",
+          slug: "digital-services",
           debug: {
             last_synced_at: "1989-12-13T01:02:03+00:00",
             payload_version: 12_345,

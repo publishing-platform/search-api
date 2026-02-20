@@ -39,6 +39,7 @@ RSpec.describe Result, type: :model do
           "organisation_status" => "live",
           "organisation_type" => "department",
           "organisation_abbreviation" => "ds",
+          "slug" => "sample-slug",
         }
       end
 
@@ -54,6 +55,7 @@ RSpec.describe Result, type: :model do
           organisation_status: "live",
           organisation_type: "department",
           organisation_abbreviation: "ds",
+          slug: "sample-slug",
         )
       end
     end

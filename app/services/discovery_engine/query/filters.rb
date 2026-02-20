@@ -6,6 +6,7 @@ module DiscoveryEngine::Query
     FILTERABLE_STRING_FIELDS = %w[
       document_type
       link
+      slug
     ].freeze
     FILTERABLE_TIMESTAMP_FIELDS = %w[public_timestamp].freeze
 
