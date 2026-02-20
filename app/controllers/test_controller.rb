@@ -1,3 +1,4 @@
+# rubocop:disable Lint/UselessAssignment
 class TestController < ApplicationController
   def index
     document_hash = {
@@ -59,3 +60,4 @@ class TestController < ApplicationController
     render json: {}
   end
 end
+# rubocop:enable Lint/UselessAssignment
