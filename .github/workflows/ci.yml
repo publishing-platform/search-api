@@ -38,4 +38,10 @@ jobs:
       - name: Run RSpec
         env:
           RAILS_ENV: test
+          # All Google client library calls are mocked, but the application needs this set to boot
+          GOOGLE_CLOUD_PROJECT_ID: not-used
+          GOOGLE_CLOUD_PROJECT_ID_NUMBER: not-used
+          DISCOVERY_ENGINE_DEFAULT_COLLECTION_NAME: not-used
+          DISCOVERY_ENGINE_DEFAULT_LOCATION_NAME: not-used      
+          REDIS_URL: redis://localhost:6379 # not used in tests, but required to boot the application
         run: bundle exec rake spec
