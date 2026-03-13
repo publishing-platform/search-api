@@ -130,8 +130,8 @@ GEM
       gapic-common (~> 1.2)
       google-cloud-errors (~> 1.0)
       google-cloud-location (~> 1.0)
-    google-cloud-discovery_engine-v1beta (0.20.1)
-      gapic-common (~> 1.0)
+    google-cloud-discovery_engine-v1beta (0.23.1)
+      gapic-common (~> 1.2)
       google-cloud-errors (~> 1.0)
       google-cloud-location (~> 1.0)
     google-cloud-env (2.3.1)
@@ -445,7 +445,7 @@ DEPENDENCIES
   connection_pool
   debug
   google-cloud-discovery_engine (<= 2.4.0)
-  google-cloud-discovery_engine-v1beta (<= 0.20.1)
+  google-cloud-discovery_engine-v1beta (<= 0.23.2)
   jsonpath
   loofah
   publishing_platform_app_config
