@@ -1,5 +1,3 @@
-require "google/cloud/discovery_engine/v1beta"
-
 module DiscoveryEngine
   module Clients
   module_function
