@@ -440,7 +440,7 @@ DEPENDENCIES
   climate_control
   connection_pool
   debug
-  google-cloud-discovery_engine (<= 2.4.0)
+  google-cloud-discovery_engine
   jsonpath
   loofah
   publishing_platform_app_config

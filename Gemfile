@@ -4,7 +4,7 @@ gem "rails", "~> 8.0.3"
 
 gem "bootsnap", require: false
 gem "connection_pool"
-gem "google-cloud-discovery_engine", "<= 2.4.0"
+gem "google-cloud-discovery_engine"
 gem "jsonpath"
 gem "loofah"
 gem "publishing_platform_app_config"
