@@ -5,3 +5,6 @@ defaults:
 overrides:
   - dependency: rails # should be upgraded manually, see https://docs.publishing.service.gov.uk/manual/keeping-software-current.html#rails
     auto_merge: false
+  - dependency: google-cloud-discovery_engine
+    allowed_semver_bumps:
+      - patch
