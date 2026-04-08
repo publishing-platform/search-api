@@ -51,7 +51,7 @@ RSpec.describe PublishingApiMessageProcessor do
         expect(logger).to have_received(:error).with(<<~MSG)
           Failed to process incoming document message:
           RuntimeError: Could not synchronize
-          Message content: {:\"I am\"=>\"a message\"}
+          Message content: {\"I am\": \"a message\"}
         MSG
 
         # expect(logger).to have_received(:error).with(<<~MSG)
