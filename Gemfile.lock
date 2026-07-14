@@ -269,7 +269,7 @@ GEM
       puma (>= 5.6, < 8.0)
       sentry-rails (>= 5.3, < 7.0)
       sentry-ruby (~> 5.3)
-    publishing_platform_message_queue_consumer (0.3.5)
+    publishing_platform_message_queue_consumer (0.3.6)
       bunny (>= 2.24, < 4.0)
     publishing_platform_rubocop (0.3.9)
       rubocop (= 1.88.2)
@@ -325,7 +325,7 @@ GEM
       logger
       prism (>= 1.6.0)
       tsort
-    rbtree (0.4.6)
+    rbtree (0.4.7)
     rdoc (8.0.0)
       erb
       prism (>= 1.6.0)
