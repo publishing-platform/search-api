@@ -255,7 +255,7 @@ GEM
       racc (~> 1.4)
     os (1.1.4)
     parallel (2.1.0)
-    parser (3.3.11.1)
+    parser (3.3.12.0)
       ast (~> 2.4.1)
       racc
     pp (0.6.4)
@@ -270,7 +270,7 @@ GEM
       sentry-ruby (~> 5.3)
     publishing_platform_message_queue_consumer (0.3.8)
       bunny (>= 2.24, < 4.0)
-    publishing_platform_rubocop (0.3.9)
+    publishing_platform_rubocop (0.3.11)
       rubocop (= 1.88.2)
       rubocop-ast (= 1.50.0)
       rubocop-capybara (= 2.23.0)
