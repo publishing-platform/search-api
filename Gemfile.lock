@@ -264,7 +264,7 @@ GEM
     prism (1.9.0)
     pstore (0.2.1)
     public_suffix (7.0.5)
-    publishing_platform_app_config (0.5.5)
+    publishing_platform_app_config (0.5.7)
       puma (>= 5.6, < 8.0)
       sentry-rails (>= 5.3, < 7.0)
       sentry-ruby (~> 5.3)
@@ -320,7 +320,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.4.2)
-    rbs (4.0.3)
+    rbs (4.1.2)
       logger
       prism (>= 1.6.0)
       tsort
@@ -416,7 +416,7 @@ GEM
       base64
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.8.2)
+    zeitwerk (2.8.3)
 
 PLATFORMS
   aarch64-linux-gnu
